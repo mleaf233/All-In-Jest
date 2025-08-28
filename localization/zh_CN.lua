@@ -81,6 +81,19 @@ return {
                     "每级 {C:chips}+#1#{} 筹码和 {C:mult}+#2#{}倍率"
                 }
             },
+            e_aij_negative_playing_card = {
+                name = "负片",
+                text = {
+                    "{C:dark_edition}+#1#{} 手牌上限",
+                    "{C:inactive}(负片效果无法被复制)"
+                },
+            },
+            -- e_aij_silver = {
+            --     name = "Silver",
+            --     text = {
+            --         "{C:attention}X#1#{} effects",
+            --     }
+            -- },
         },
         Joker = {
             j_aij_flying_ace = {
@@ -1003,7 +1016,7 @@ return {
                 name = "宫廷弄臣",
                 text = {
                     "若打出的牌型包含一张{C:attention}K{}或{C:attention}Q{}",
-                    "有 {C:green}#2# 分之 #1#{} 的几率生成一张{C:tarot}塔罗牌{}",
+                    "有 {C:green}#2#/#1#{} 的几率生成一张{C:tarot}塔罗牌{}",
                     "{C:inactive}（必须有空位）"
                 },
             },

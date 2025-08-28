@@ -27,7 +27,7 @@ local tetraphobia = {
       if context.discard and context.other_card and context.other_card:get_id() == 4 and not context.other_card.debuff then
           card.ability.extra.mult = (card.ability.extra.mult or 0) + card.ability.extra.mult_mod
           card_eval_status_text(card, 'extra', nil, nil, nil, {
-              message = '+'..(card.ability.extra.mult or 0)..' Mult',
+              message = '+'..(card.ability.extra.mult or 0)..' '..localize('k_mult'),
               colour = G.C.MULT
           })
           return { card = card }

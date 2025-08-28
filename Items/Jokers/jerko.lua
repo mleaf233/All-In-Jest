@@ -28,13 +28,13 @@ local jerko = {
           main_start =
           {{n = G.UIT.R, config = {align = "cm"}, nodes = {
               {n = G.UIT.R, config = {align = "cm", paddmmmng = 0.02}, nodes = {
-                  {n = G.UIT.T, config = {text = "+"..card.ability.extra.mult+" ", colour = G.C.MULT, scale = 0.32}},
+                  {n = G.UIT.T, config = {text = "+"..card.ability.extra.mult.." ", colour = G.C.MULT, scale = 0.32}},
                   {n = G.UIT.T, config = {text = localize("k_mult"), colour = G.C.L_BLACK, scale = 0.32}},
               }},
               {n = G.UIT.R, config = {align = "cm", padding = 0.02}, nodes = {
                   {n = G.UIT.T, config = {text = localize("k_repeat"), colour = G.C.L_BLACK, scale = 0.32}},
                   {n = G.UIT.O, config = {object = DynaText({string = r_retriggers, colours = {G.C.FILTER}, random_element = true, pop_in_rate = 9999999, silent = true, pop_delay = 0.2, scale = 0.32, min_cycle_time = 0})}},
-                  {n = G.UIT.T, config = {text = " " + localize("k_num_of_times"), colour = G.C.L_BLACK, scale = 0.32}}
+                  {n = G.UIT.T, config = {text = " "..localize("k_num_of_times"), colour = G.C.L_BLACK, scale = 0.32}}
               }}
           }}}
       }
