@@ -19,29 +19,26 @@ local jerko = {
     eternal_compat = true,
 
     loc_vars = function(self, info_queue, card)
-        local r_retriggers = {} 
-        for i = card.ability.extra.min, card.ability.extra.max do
-            r_retriggers[#r_retriggers + 1] = string.format("%d", i)
-        end
-        local text = {
-            [1] = "+",
-            [2] = " Mult",
-            [3] = "Retrigger ",
-            [4] = " times",
-        }
-        return {main_start =
-        {{n = G.UIT.R, config = {align = "cm"}, nodes = {
-            {n = G.UIT.R, config = {align = "cm", padding = 0.02}, nodes = {
-                {n = G.UIT.T, config = {text = text[1]..card.ability.extra.mult, colour = G.C.MULT, scale = 0.32}},
-                {n = G.UIT.T, config = {text = text[2], colour = G.C.L_BLACK, scale = 0.32}},
-            }},
-            {n = G.UIT.R, config = {align = "cm", padding = 0.02}, nodes = {
-                {n = G.UIT.T, config = {text = text[3], colour = G.C.L_BLACK, scale = 0.32}},
-                {n = G.UIT.O, config = {object = DynaText({string = r_retriggers, colours = {G.C.FILTER}, random_element = true, pop_in_rate = 9999999, silent = true, pop_delay = 0.2, scale = 0.32, min_cycle_time = 0})}},
-                {n = G.UIT.T, config = {text = text[4], colour = G.C.L_BLACK, scale = 0.32}}
-            }}
-        }}}
-        }
+      local r_retriggers = {} 
+      for i = card.ability.extra.min, card.ability.extra.max do
+          r_retriggers[#r_retriggers + 1] = string.format("%d", i)
+      end
+      return {
+          -- vars = {card.ability.extra.mult, card.ability.extra.max},
+          main_start =
+          {{n = G.UIT.R, config = {align = "cm"}, nodes = {
+              {n = G.UIT.R, config = {align = "cm", paddmmmng = 0.02}, nodes = {
+                  {n = G.UIT.T, config = {text = "+"..card.ability.extra.mult+" ", colour = G.C.MULT, scale = 0.32}},
+                  {n = G.UIT.T, config = {text = localize("k_mult"), colour = G.C.L_BLACK, scale = 0.32}},
+              }},
+              {n = G.UIT.R, config = {align = "cm", padding = 0.02}, nodes = {
+                  {n = G.UIT.T, config = {text = localize("k_repeat"), colour = G.C.L_BLACK, scale = 0.32}},
+                  {n = G.UIT.O, config = {object = DynaText({string = r_retriggers, colours = {G.C.FILTER}, random_element = true, pop_in_rate = 9999999, silent = true, pop_delay = 0.2, scale = 0.32, min_cycle_time = 0})}},
+                  {n = G.UIT.T, config = {text = " " + localize("k_num_of_times"), colour = G.C.L_BLACK, scale = 0.32}}
+              }}
+          }}}
+      }
+        
     end,
     calculate = function(self, card, context)
       if context.repetition_only or (context.retrigger_joker_check) then

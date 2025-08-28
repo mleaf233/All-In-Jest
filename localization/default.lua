@@ -3038,5 +3038,11 @@ j_aij_chitty = {
 		        }
             },
         }
+    },
+    misc={
+        dictionary = {
+            k_retrigger = "Retrigger",
+            k_num_of_times = "times"
+        }
     }
 }

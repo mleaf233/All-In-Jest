@@ -171,8 +171,8 @@ return {
             j_aij_squeezy_pete = {
                 name = "皮特捏捏",
                 text = {
-                    "每次连续打出包含{C:attention}葫芦{}的牌型",
-                    "{X:mult,C:white}X#1#{}倍率",
+                    "连续打出包含{C:attention}葫芦{}的牌型时",
+                    "这张小丑牌获得 {X:mult,C:white}X#1#{}倍率，失败则重置倍率",
                     "{C:inactive}（当前为{} {X:mult,C:white}X#2#{}{C:inactive} 倍率）",
                 },
             },
@@ -210,10 +210,10 @@ return {
             j_aij_negative_space = {
                 name = "负空间",
                 text = {
-                    "每拥有{C:dark_edition}负片{}小丑",
+                    "每拥有一张{C:dark_edition}负片{}{C:attention}小丑牌{}",
                     "{C:attention}+#1#{}手牌上限",
-                    "{C:inactive}(当前为{C:attention}+#2#{C:inactive}手牌上限){}",
-                    "{C:inactive}(上限为{C:attention}+#3#{C:inactive}手牌上限){}"
+                    "{C:inactive}(当前{C:attention}+#2#{C:inactive}手牌上限){}",
+                    "{C:inactive}(最多{C:attention}+#3#{C:inactive}手牌上限){}"
                 }
             },
             j_aij_infinite_jest = {
@@ -1037,8 +1037,9 @@ return {
             },
             j_aij_phoney_baloney = { name = "虚假废话", text = { "" } },
             j_aij_jerko = { 
-                name = "混蛋", 
-                text = { "" } 
+                name = "耶尔科",
+                text = { 
+                } 
             },
             j_aij_design_document = {
                 name = "设计文档",
@@ -1169,8 +1170,8 @@ return {
                 name = "野蛮人霍夫纳尔",
                 text = {
                     "{C:mult}+#1#{}倍率",
-                    "在{C:attention}决胜盲注{}中禁用",
-                    "并提供 {X:mult,C:white}X#2#{}倍率"
+                    "在{C:attention}决胜盲注{}中消除盲注的限制条件",
+                    "并额外给予 {X:mult,C:white}X#2#{}倍率"
                 },
             },
             j_aij_histrio = {
@@ -2476,6 +2477,12 @@ return {
                     "{C:inactive}例：33, 151, 3003{}"
                 }
             }
+        }
+    },
+    misc={
+        dictionary = {
+            k_repeat = "重新触发",
+            k_num_of_times = "次"
         }
     }
 }
