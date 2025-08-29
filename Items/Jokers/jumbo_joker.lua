@@ -1,3 +1,6 @@
+local ATLAS_NAME_WITHOUT_PREFIX = "jumbo_joker"
+local MOD_PREFIX = "aij_"
+local ATLAS_NAME =  MOD_PREFIX .. ATLAS_NAME_WITHOUT_PREFIX
 local jumbo_joker = {
     object_type = "Joker",
     order = 141,
@@ -10,7 +13,7 @@ local jumbo_joker = {
     },
     rarity = 2,
     pos = { x = 0, y = 0 },
-    atlas = 'jumbo_joker',
+    atlas = ATLAS_NAME_WITHOUT_PREFIX,
     cost = 6,
     unlocked = true,
     discovered = false,
@@ -54,9 +57,15 @@ local hoverref = Card.hover
 function Card:hover()
     hoverref(self)
     if self.config.center.key == "j_aij_jumbo_joker" and self.config.center.discovered then
-        local _atlas, _pos = get_front_spriteinfo(self.config.card)
-        _pos = { x = 1, y = 0 }
-        _atlas = G.ASSET_ATLAS['aij_jumbo_joker']
+        local _atlas, _pos = G.ASSET_ATLAS[ATLAS_NAME], { x = 1, y = 0 }
+        if self.config.card then
+            _atlas, _pos = get_front_spriteinfo(self.config.card) -- Meaningless call?
+            _pos = { x = 1, y = 0 }
+            _atlas = G.ASSET_ATLAS[ATLAS_NAME]
+        end
+        -- local _atlas, _pos = get_front_spriteinfo(self.config.card)
+        -- _pos = { x = 1, y = 0 }
+        -- _atlas = G.ASSET_ATLAS['aij_jumbo_joker']
         if self.children.front then
             self.children.front.atlas = _atlas
             self.children.front:set_sprite_pos(_pos)
@@ -70,7 +79,7 @@ function Card:hover()
         end
 
         self.config.center.soul_pos = { x = 2, y = 0 }
-        self.children.floating_sprite = Sprite(self.T.x, self.T.y, G.CARD_W, G.CARD_H, G.ASSET_ATLAS['aij_jumbo_joker'], { x = 2, y = 0 })
+        self.children.floating_sprite = Sprite(self.T.x, self.T.y, G.CARD_W, G.CARD_H, G.ASSET_ATLAS[ATLAS_NAME], { x = 2, y = 0 })
         self.children.floating_sprite.role.draw_major = self
         self.children.floating_sprite.states.hover.can = false
         self.children.floating_sprite.states.click.can = false
@@ -83,9 +92,15 @@ local stop_hoverref = Card.stop_hover
 function Card:stop_hover()
     stop_hoverref(self)
     if self.config.center.key == "j_aij_jumbo_joker" and self.config.center.discovered then
-        local _atlas, _pos = get_front_spriteinfo(self.config.card)
-        _pos = { x = 0, y = 0 }
-        _atlas = G.ASSET_ATLAS['aij_jumbo_joker']
+        local _atlas, _pos = G.ASSET_ATLAS[ATLAS_NAME], { x = 0, y = 0 }
+        if self.config.card then
+            _atlas, _pos = get_front_spriteinfo(self.config.card) -- Meaningless call?
+            _pos = { x = 0, y = 0 }
+            _atlas = G.ASSET_ATLAS[ATLAS_NAME]
+        end
+        -- local _atlas, _pos = get_front_spriteinfo(self.config.card)
+        -- _pos = { x = 0, y = 0 }
+        -- _atlas = G.ASSET_ATLAS['aij_jumbo_joker']
         if self.children.front then
             self.children.front.atlas = _atlas
             self.children.front:set_sprite_pos(_pos)
