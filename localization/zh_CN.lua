@@ -1,5 +1,7 @@
 --ALOPHRINE的个人汉化修正！如遇到问题请联系我。QQ与B站同名
 --vergenti Q群：奇小苦、:)，对部分汉化进行了修正，包括需要代码修改的丑
+-------------------------------------------------------------------
+-- 由github.com ->  @mleaf233 二次修改，对部分小丑牌的描述模糊进行了修正
 return {
     misc = {
         dictionary = {
@@ -99,9 +101,9 @@ return {
             j_aij_flying_ace = {
                 name = "空中王牌",
                 text = {
-                    "本回合中，每打出一张",
-                    "独特{C:attention}花色{}的{C:attention}A{}",
-                    "回合结束时获得 {C:money}$#1#{} ",
+                    "每打出一张被计分的{C:attention}A{}牌",
+                    "在回合结束时获得 {C:money}$#1#{} ",
+                    "{C:inactive}（每回合每个{C:attention}花色{C:inactive}最多一次）",
                     "{C:inactive}（当前为{} {C:money}$#2#{}{C:inactive}）"
                 },
             },
@@ -1066,8 +1068,9 @@ return {
                 text = {
                     "当打出包含{C:attention}顺子{}牌型时",
                     "获得{C:attention}+#1#{}手牌上限",
+                    "打出其他牌型时重置",
                     "{C:inactive}(当前为{C:attention}+#2#{C:inactive}手牌上限)",
-                    "{C:inactive}(击败盲注后重置)"
+                    "{C:inactive}(最多为{C:attention}+#3#{C:inactive}手牌上限)"
                 }
             },
             j_aij_arecibo_message = { name = "阿雷西博信息", text = { "" } },
