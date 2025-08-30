@@ -1,12 +1,14 @@
+local suffix_table = {k_mult = " Mult ", blank = " ", k_aij_chips=" Chips "}
+local prefix_table = {k_aij_give = "give", k_aij_earn = "earn"}
 local function jest_overdesigned_joker_cycle(suit)
     if suit == "Heart" then
-        return {"Club", 14}, {"give", "+", " Mult "}, {G.C.SUITS.Clubs, G.C.MULT}
+        return {"Club", 14}, {prefix_table.k_aij_give, "+", suffix_table.k_mult}, {G.C.SUITS.Clubs, G.C.MULT}
     elseif suit == "Club" then
-        return {"Diamond", 2}, {"earn", "$", " "}, {G.C.SUITS.Diamonds, G.C.MONEY}
+        return {"Diamond", 2}, {prefix_table.k_aij_earn, "$", suffix_table.blank}, {G.C.SUITS.Diamonds, G.C.MONEY}
     elseif suit == "Diamond" then
-        return {"Spade", 100}, {"give", "+", " Chips "}, {G.C.SUITS.Spades, G.C.CHIPS}
+        return {"Spade", 100}, {prefix_table.k_aij_give, "+", suffix_table.k_aij_chips}, {G.C.SUITS.Spades, G.C.CHIPS}
     elseif suit == "Spade" then
-        return {"Heart", 1.5}, {"give", "X", " Mult "}, {G.C.SUITS.Hearts, G.C.WHITE, G.C.MULT}
+        return {"Heart", 1.5}, {prefix_table.k_aij_give, "X", suffix_table.k_mult}, {G.C.SUITS.Hearts, G.C.WHITE, G.C.MULT}
     end
 end
 local overdesigned_joker = {
@@ -18,9 +20,9 @@ local overdesigned_joker = {
       suit = "Heart",
       amount = 1.5,
       extra = {
-          prefix = "give",
+          prefix = prefix_table.k_aij_give,
           symbol = "X",
-          suffix = " Mult ",
+          suffix = suffix_table.k_mult,
           colours = {
               suit = G.C.SUITS.Hearts,
               amount = G.C.WHITE,
@@ -39,16 +41,36 @@ local overdesigned_joker = {
   
     loc_vars = function(self, info_queue, card)
         local suits = {'overdesigned_spade', 'overdesigned_heart', 'overdesigned_club', 'overdesigned_diamond'}
-        for _, key in ipairs(suits) do
+        local suffix_loc = card.ability.extra.suffix
+        local prefix_loc = card.ability.extra.prefix
+        for k, v in pairs(suffix_table) do
+            if card.ability.extra.suffix == v then
+                local temp_loc = localize(k)
+                if temp_loc and temp_loc ~="ERROR"  then
+                    suffix_loc = ' ' .. temp_loc .. ' '
+                end
+                break
+            end
+        end
+        for k, v in pairs(prefix_table) do
+            if card.ability.extra.prefix == v then
+                local temp_loc = localize(k)
+                if temp_loc then
+                    prefix_loc = temp_loc..' '
+                end
+                break
+            end
+        end
+        for i, key in ipairs(suits) do
           info_queue[#info_queue+1] = {set = 'Other', key = key}
         end
         return {
             vars = {
-                card.ability.suit,
+                localize(card.ability.suit, "suits_overdesigned") or card.ability.suit,
                 card.ability.amount,
-                card.ability.extra.prefix,
+                prefix_loc,
                 card.ability.extra.symbol,
-                card.ability.extra.suffix,
+                suffix_loc,
                 colours = {
                     card.ability.extra.colours.suit,
                     card.ability.extra.colours.amount,
@@ -73,7 +95,7 @@ local overdesigned_joker = {
             card.ability.extra.colours.suit = colour_info[1]
             card.ability.extra.colours.amount = colour_info[2]
             card.ability.extra.colours.background = colour_info[3] or G.C.WHITE
-            card_eval_status_text(card, 'extra', nil, nil, nil, {message = card.ability.suit, colour = G.C.FILTER})
+            card_eval_status_text(card, 'extra', nil, nil, nil, {message = localize(card.ability.suit, "suits_overdesigned") or card.ability.suit, colour = G.C.FILTER})
             end
             if cardd:is_suit(orig_suit.."s") then
                 if orig_suit == "Club" then

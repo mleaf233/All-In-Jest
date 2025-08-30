@@ -3042,7 +3042,16 @@ j_aij_chitty = {
     misc={
         dictionary = {
             k_retrigger = "Retrigger",
-            k_num_of_times = "times"
-        }
+            k_num_of_times = "times",
+            k_aij_give = "give",
+            k_aij_earn = "earn",
+            k_aij_chips = "Chips",
+        },
+        suits_overdesigned = {
+            Heart="Heart",
+            Club="Club",
+            Diamond="Diamond",
+            Spade="Spade",
+        },
     }
 }

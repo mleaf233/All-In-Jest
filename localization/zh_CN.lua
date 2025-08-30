@@ -118,7 +118,7 @@ return {
                 name = "你搞砸了！",
                 text = {
                     "将所有打出的 {C:attention}#1#{}",
-                    "变为 {C:attention}#2#{}牌",
+                    "变为 {C:attention}#2#{}",
                     "{s:0.8}牌面和增强效果",
                     "{s:0.8}在回合结束时改变"
                 },
@@ -162,8 +162,8 @@ return {
             j_aij_the_clown_show = {
                 name = "小丑秀",
                 text = {
-                    "本轮每购买一张{C:attention}小丑牌",
-                    "获得{C:chips}+#1#{}筹码",
+                    "每购买一张其他{C:attention}小丑牌",
+                    "这张小丑牌本局游戏永久获得{C:chips}+#1#{}筹码",
                     "{C:inactive}(当前为{C:chips}+#2#{C:inactive}筹码)"
                 }
             },
@@ -2498,7 +2498,16 @@ return {
     misc={
         dictionary = {
             k_repeat = "重新触发",
-            k_num_of_times = "次"
-        }
+            k_num_of_times = "次",
+            k_aij_give = "给予",
+            k_aij_earn = "赚取",
+            k_aij_chips = "筹码",
+        },
+        suits_overdesigned = {
+            Heart="红桃",
+            Club="梅花",
+            Diamond="方片",
+            Spade="黑桃",
+        },
     }
 }
