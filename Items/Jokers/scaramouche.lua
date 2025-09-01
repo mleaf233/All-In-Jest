@@ -28,11 +28,20 @@ local scaramouche = {
         if not card.ability.extra.scaramouche_poker_hand then
             card.ability.extra.scaramouche_poker_hand = pseudorandom_element(_poker_hands, pseudoseed('scaramouche'))
         end
-        return {
-            vars = {
-                card.ability.extra.scaramouche_poker_hand
+        local loc_str = localize(card.ability.extra.scaramouche_poker_hand, 'poker_hands')
+        if loc_str and loc_str ~= 'ERROR' then
+            return {
+                vars = {
+                    loc_str
+                }
             }
-        }
+        else
+            return {
+                vars = {
+                    card.ability.extra.scaramouche_poker_hand
+                }
+            }
+        end
     end,
 
     calculate = function(self, card, context)
@@ -44,7 +53,7 @@ local scaramouche = {
             card.ability.extra.scaramouche_poker_hand = pseudorandom_element(_poker_hands, pseudoseed('scaramouche'))
             return {
                 message = localize('k_reset')
-        }
+            }
         end
         if context.repetition and context.cardarea == G.play then
             if context.scoring_name == card.ability.extra.scaramouche_poker_hand then

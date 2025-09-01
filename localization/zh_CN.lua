@@ -581,7 +581,7 @@ return {
                 text = {
                     "如果{C:attention}所出牌型{}为{C:attention}#1#{}",
                     "{C:attention}重新触发{}所有计分牌",
-                    "{C:inactive}(每回合结束牌型改变){}"
+                    "{C:inactive}(每回合结束时牌型改变){}"
                 }
             },
             j_aij_clay_joker = {
@@ -1052,9 +1052,8 @@ return {
             },
             j_aij_phoney_baloney = { name = "虚假废话", text = { "" } },
             j_aij_jerko = { 
-                name = "耶尔科",
-                text = { 
-                } 
+                name = "混蛋", -- 经过与第一版译者讨论，决定保持原样。 After discussion with the translator of the first edition, it was decided to keep it as is.
+                text = { "" } 
             },
             j_aij_design_document = {
                 name = "设计文档",
