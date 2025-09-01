@@ -2501,6 +2501,7 @@ return {
             k_aij_give = "给予",
             k_aij_earn = "赚取",
             k_aij_chips = "筹码",
+            k_aij_inactive = "未激活",
         },
         suits_overdesigned = {
             Heart="红桃",

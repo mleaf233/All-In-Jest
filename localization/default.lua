@@ -3046,6 +3046,7 @@ j_aij_chitty = {
             k_aij_give = "give",
             k_aij_earn = "earn",
             k_aij_chips = "Chips",
+            k_aij_inactive = "Inactive",
         },
         suits_overdesigned = {
             Heart="Heart",
