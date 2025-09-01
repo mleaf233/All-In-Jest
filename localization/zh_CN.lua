@@ -725,7 +725,7 @@ return {
                 text = {
                     "如果每回合{C:attention}第一次{}出牌",
                     "仅含{C:attention}1张{}无{C:attention}蜡封{}牌",
-                    "此小丑牌随机获得一个",
+                    "这张打出的牌随机获得一个",
                     "{C:red}红色{}、{C:blue}蓝色{}或{C:money}金色{}的{C:attention}蜡封{}"
                 },
             },
