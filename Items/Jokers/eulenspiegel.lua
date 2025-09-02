@@ -27,9 +27,10 @@ local eulenspiegel = {
       if context.end_of_round and context.cardarea == G.jokers and context.main_eval then
         if G.GAME.blind.boss and not context.blueprint then
             ease_ante(-card.ability.ante_mod)
-            card_eval_status_text(card, 'extra', nil, nil, nil, {message = "-"..card.ability.ante_mod.." Ante", colour = G.C.FILTER})
+            card_eval_status_text(card, 'extra', nil, nil, nil, {message = "-"..card.ability.ante_mod.." "..localize('k_ante'), colour = G.C.FILTER})
             card.ability.Xmult = card.ability.Xmult - card.ability.Xmult_mod
-            card_eval_status_text(card, 'extra', nil, nil, nil, {message = "-"..card.ability.Xmult_mod.." XMult", colour = G.C.MULT})
+            local msg_loc = localize({type='variable', key='a_xmult_minus', vars = {card.ability.Xmult_mod}})
+            card_eval_status_text(card, 'extra', nil, nil, nil, {message = msg_loc, colour = G.C.MULT})
             if card.ability.Xmult == 0 then
               card:start_dissolve()
               card.ability.Xmult = 3

@@ -37,7 +37,7 @@ local devil_deal = {
       if hearts > 0 then
         card.ability.extra.xmult = card.ability.extra.xmult + (hearts * card.ability.extra.xmult_mod)
         return {
-          message = "X"..card.ability.extra.xmult.. " Mult",
+          message = "X"..card.ability.extra.xmult.. " " .. localize('k_mult'),
         }
       end
       return
@@ -50,7 +50,7 @@ local devil_deal = {
       if hearts > 0 then
         card.ability.extra.xmult = card.ability.extra.xmult + (hearts * card.ability.extra.xmult_mod)
         return {
-          message = "X"..card.ability.extra.xmult.. " Mult"
+          message = "X"..card.ability.extra.xmult.. " " .. localize('k_mult'),
         }
       end
       return

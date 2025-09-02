@@ -24,7 +24,16 @@ local paracosm = {
             end
         end
         card.ability.extra.hand = most_played_hand or "[Most played poker hand]"
-        return { vars = {card.ability.extra.hand}}
+        local loc_str = localize(card.ability.extra.hand, 'poker_hands')
+        if loc_str and loc_str ~= 'ERROR' then
+            return {
+                vars = { loc_str }
+            }
+        else
+            return {
+                vars = { card.ability.extra.hand }
+            }
+        end
     end,
   
     calculate = function(self, card, context)

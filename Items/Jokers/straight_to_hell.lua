@@ -36,7 +36,7 @@ local straight_to_hell = {
                     card.ability.extra.xmult = card.ability.extra.xmult + card.ability.extra.xmult_mod
 
                     card_eval_status_text(card, 'extra', nil, nil, nil, {
-                        message = 'X'..number_format(card.ability.extra.xmult).. ' Mult',
+                        message = 'X'..number_format(card.ability.extra.xmult).. ' ' ..localize('k_mult') ,
                         colour = G.C.MULT
                     })
 

@@ -16,7 +16,7 @@ local kasperle = {
     eternal_compat = true,
   
     loc_vars = function(self, info_queue, card)
-        default_loc = {
+        local default_loc = {
             active = "(Active!)",
             inactive = "(Inactive)"
         }

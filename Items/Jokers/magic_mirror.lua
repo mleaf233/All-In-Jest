@@ -16,12 +16,27 @@ local magic_mirror = {
     eternal_compat = true,
   
     loc_vars = function(self, info_queue, card)
-        local active_text = "(Inactive)"
+        local default_loc = {
+            active = "(Active!)",
+            inactive = "(Inactive)"
+        }
+        local active_text = default_loc.inactive
         if G.GAME.jest_magic_mirror_trigger then 
-            active_text = "(Active!)"
+            active_text = localize('k_active_ex')
+            if active_text == "ERROR" then
+                active_text = default_loc.active
+            else
+                active_text = "(" .. active_text .. ")"
+            end
         else
-            active_text = "(Inactive)"
+            active_text = localize("k_aij_inactive")
+            if active_text == "ERROR" then
+                active_text = "(Inactive)"
+            else
+                active_text = "(" .. active_text .. ")"
+            end
         end
+
         return { vars = {
             active_text
         }}

@@ -34,7 +34,7 @@ local dor = {
               colour = G.C.EDITION,
               remove_default_message = true,
               Xmult_mod = xmlt,
-              message = "^"..(card.ability.powmult + 1).." Mult",
+              message = "^"..(card.ability.powmult + 1).." "..localize('k_mult'),
               sound = 'aij_expmult'
         }
     

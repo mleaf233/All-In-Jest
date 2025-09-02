@@ -37,7 +37,7 @@ local la_commedia_e_finita = {
       if face_cards > 0 then
         card.ability.extra.mult = card.ability.extra.mult + (face_cards * card.ability.extra.mult_gain)
         return {
-          message = '+' .. card.ability.extra.mult .. ' Mult',
+          message = '+' .. card.ability.extra.mult .. ' ' .. localize('k_mult'),
           colour = G.C.RED
         }
       end
@@ -51,7 +51,7 @@ local la_commedia_e_finita = {
       if face_cards > 0 then
         card.ability.extra.mult = card.ability.extra.mult + (face_cards * card.ability.extra.mult_gain)
         return {
-          message = '+' .. card.ability.extra.mult .. ' Mult',
+          message = '+' .. card.ability.extra.mult .. ' ' .. localize('k_mult'),
           colour = G.C.RED
         }
       end

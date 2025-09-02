@@ -19,9 +19,19 @@ local birthday_clown = {
     eternal_compat = true,
   
     loc_vars = function(self, info_queue, card)
-      local active_text = "Active!"
+      local default_loc = {
+            active = "Active!",
+            inactive = "Inactive"
+        }
+      local active_text = localize('k_active_ex')
+      if active_text == 'ERROR' then
+        active_text = default_loc.active
+      end
       if not card.ability.extra.active then 
-        active_text = "Inactive"
+        active_text = localize('k_aij_inactive')
+        if active_text == 'ERROR' then
+          active_text = default_loc.inactive
+        end
       end
       return {
         vars = {

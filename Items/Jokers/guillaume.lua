@@ -32,7 +32,7 @@ local guillaume = {
   
     calculate = function(self, card, context)
       if context.end_of_round and G.jokers and not context.blueprint and G.GAME.blind.boss and #G.jokers.cards < 5 and context.main_eval then
-        card_eval_status_text(card,'extra',nil,nil,nil,{message='+1 Joker Slot'})
+        card_eval_status_text(card,'extra',nil,nil,nil,{message=localize({type='variable', key = 'k_aij_joker_slot_plus', vars={card.ability.extra.joker_slots_mod}})})
         G.jokers.config.card_limit = G.jokers.config.card_limit + card.ability.extra.joker_slots_mod
         card.ability.extra.joker_slots = card.ability.extra.joker_slots + card.ability.extra.joker_slots_mod
       end

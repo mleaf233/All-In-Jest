@@ -3048,6 +3048,9 @@ j_aij_chitty = {
             k_aij_chips = "Chips",
             k_aij_inactive = "Inactive",
         },
+        v_dictionary = {
+            k_aij_joker_slot_plus = "+#1# Joker Slot",
+        },
         suits_overdesigned = {
             Heart="Heart",
             Club="Club",

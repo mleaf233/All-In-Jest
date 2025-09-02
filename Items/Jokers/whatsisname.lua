@@ -16,7 +16,7 @@ local whatsisname = {
     eternal_compat = true,
   
     loc_vars = function(self, info_queue, card)
-  
+        info_queue[#info_queue+1] = {set = 'Other', key = 'p_aij_guess_the_jest', vars = {1, 3}} -- TODO: 1 and 3 should be replaced with vars from the booster
     end,
 
     add_to_deck = function(self, card, from_debuff)

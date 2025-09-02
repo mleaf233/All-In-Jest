@@ -35,7 +35,7 @@ local adoring_joker = {
             return {
                 mult = Mult - mult,
                 remove_default_message = true,
-                message = '=' .. Mult .. ' Mult',
+                message = '=' .. Mult .. ' '.. localize('k_mult'),
                 colour = G.C.RED,
                 sound = 'multhit1'
             }

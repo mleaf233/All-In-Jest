@@ -31,7 +31,8 @@ local corpse_paint = {
                 context.other_card:set_edition(nil)
                 if pseudorandom('corpse_paint') < G.GAME.probabilities.normal/card.ability.odds then
                     G.hand:change_size(card.ability.hand_size)
-                    card_eval_status_text(card, 'extra', nil, nil, nil, {message = "+"..card.ability.hand_size.." Hand size", colour = G.C.FILTER})
+                    local msg_loc = localize({type='variable', key='a_handsize', vars = {card.ability.hand_size}})
+                    card_eval_status_text(card, 'extra', nil, nil, nil, {message = msg_loc, colour = G.C.FILTER})
                     card.ability.max_hand_size = tostring(tonumber(card.ability.max_hand_size) + card.ability.hand_size)
                 end
             end

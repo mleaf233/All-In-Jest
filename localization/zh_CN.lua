@@ -141,7 +141,8 @@ return {
                     "{C:inactive}（只能存储一张牌）",
                     "{C:inactive}（仅在最左侧位置触发）"
                 }
-            },j_aij_sleepy_joker = {
+            },
+            j_aij_sleepy_joker = {
                 name = "瞌睡小丑",
                 text = {
                     "如果打出的牌中只含",
@@ -321,9 +322,9 @@ return {
             j_aij_art_of_the_deal = {
                 name = "交易艺术",
                 text = {
-                    "每当获得{C:money}金钱{}时",
+                    "每当获得{C:money}资金{}时",
                     "{C:mult}+#2#{}倍率",
-                    "如果{C:money}金钱{}为{C:money}$0{}或更少",
+                    "如果{C:money}资金{}为{C:money}$0{}或更少",
                     "效果重置",
                     "{C:inactive}（当前为{C:mult}+#1#{C:inactive} 倍率）"
                 }
@@ -647,9 +648,9 @@ return {
             j_aij_columbina = {
                 name = "科伦比娜",
                 text = {
-                    "使用{C:spectral}幻灵牌{}时",
                     "{C:aij_plasma}平衡{}{C:attention}#1#%{}的{C:mult}倍率{}和{C:chips}筹码{}",
-                    "数值增加{C:attention}#2#%{}"
+                    "使用{C:spectral}幻灵牌{}时",
+                    "将数值增加{C:attention}#2#%{}"
                 }
             },
             j_aij_j_file = { name = "J档案", text = { "" } },
@@ -839,7 +840,7 @@ return {
                 name = "鬼祟皮特",
                 text = {
                     "回合结束时，牌组中每有一张",
-                    "{C:money}金色蜡封{}，获得 {C:money}$#2#{}",
+                    "{C:money}金色蜡封{}的游戏牌，获得 {C:money}$#2#{}",
                     "{C:inactive}（当前为{C:money}$#1#{C:inactive}）"
                 },
             },
@@ -870,7 +871,7 @@ return {
             j_aij_mummer = {
                 name = "哑剧演员",
                 text = {
-                    "当手牌中所有{C:attention}钢铁牌{}被打出时",
+                    "打出的{C:attention}钢铁牌{}被计分前",
                     "触发手牌中所有{C:attention}钢铁牌{}"
                 }
             },
@@ -878,8 +879,8 @@ return {
                 name = "踮脚贼",
                 text = {
                     "回合结束时",
-                    "获得其他{C:attention}小丑牌{} ",
-                    "{C:money}出售价值{}的{C:attention}20%{}",
+                    "此小丑牌获得其他{C:attention}小丑牌{} ",
+                    "{C:attention}20%{}的{C:money}出售价值{}",
                     "向上取整",
                     "{C:inactive}（当前为{} {C:money}$#1#{}{C:inactive}）"
                 },
@@ -1023,7 +1024,7 @@ return {
                 },
             },
             j_aij_fatuus = {
-                name = "瞽愚之徒",
+                name = "愚瞽之徒",
                 text = {
                     "如果本回合打出的第一手牌",
                     "仅包含{C:attention}K{}和{C:attention}Q{}",
@@ -1177,7 +1178,7 @@ return {
                 name = "碎屑小筹",
                 text = {
                     "此小丑牌获得与",
-                    "所花费过{C:money}金钱{}的总额数相等的{C:chips}筹码{}",
+                    "所花费过{C:money}资金{}的总额数相等的{C:chips}筹码{}",
                     "{C:inactive}（当前为{C:chips}+#1#{C:inactive} 筹码）",
                 }
             },
@@ -1193,7 +1194,7 @@ return {
                 name = "罗马演员",
                 text = {
                     "回合结束时根据{C:attention}剩余出牌数{}",
-                    "获得{C:money}$#1#{}金钱",
+                    "获得的资金额外提供{C:money}$#1#{}",
                 }
             },
             j_aij_loregg = { name = "洛雷格", text = { "" } },
@@ -1597,7 +1598,7 @@ return {
                 text = {
                     "当打出牌型分数超过",
                     "盲注要求的{C:attention}两倍{}时",
-                    "获得{C:money}#1#${}"
+                    "获得{C:money}$#1#{}"
                 }
             },
             j_aij_the_lucovico_technique = { name = "卢多维科技术", text = { "" } },
@@ -1954,14 +1955,14 @@ return {
             j_aij_bebe = {
                 name = "贝贝",
                 text = {
-                    "{C:blue}+4{}次出牌"
+                    "{C:blue}+#1#{}次出牌"
                 },
                 unlock = { "?????" }
             },
             j_aij_pipine = {
                 name = "皮平",
                 text = {
-                    "{C:red}+5{}次弃牌"
+                    "{C:red}+#1#{}次弃牌"
                 },
                 unlock = {
                     "?????"
@@ -2502,6 +2503,10 @@ return {
             k_aij_earn = "赚取",
             k_aij_chips = "筹码",
             k_aij_inactive = "未激活",
+
+        },
+        v_dictionary = {
+            k_aij_joker_slot_plus = "+#1#小丑牌槽位",
         },
         suits_overdesigned = {
             Heart="红桃",

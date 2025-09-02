@@ -42,7 +42,7 @@ local dead_president = {
                       left_joker:set_cost() 
                       left_joker:juice_up(0.5, 0.3) 
                       card_eval_status_text(left_joker, 'extra', nil, nil, nil, {
-                          message = 'Value Up!',
+                          message = localize('k_val_up'),
                           colour = G.C.MONEY
                       })
                       juiced = true
@@ -55,7 +55,7 @@ local dead_president = {
                       right_joker:set_cost()
                       right_joker:juice_up(0.5, 0.3)
                        card_eval_status_text(right_joker, 'extra', nil, nil, nil, {
-                          message = 'Value Up!',
+                          message = localize('k_val_up'),
                           colour = G.C.MONEY
                       })
                       juiced = true
